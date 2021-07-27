@@ -2,6 +2,7 @@
 import math
 
 class PQ():
+    
     def __init__(self, array):
         self.array = array
         self.heapsize = len(array)-1
