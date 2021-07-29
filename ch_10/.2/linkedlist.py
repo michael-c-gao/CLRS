@@ -64,7 +64,7 @@ class LL():
         if self.isEmpty():
             print("Can't remove from empty linked list")
             return 0
-        if self.currSize > 1:
+        elif self.currSize > 1:
             newhead = self.head.next
             newhead.prev = None
             self.head.next = None
@@ -80,7 +80,7 @@ class LL():
         if self.isEmpty():
             print("Can't remove from empty linked list")
             return 0
-        if self.currSize > 1:
+        elif self.currSize > 1:
             newtail = self.tail.prev
             newtail.next = None
             self.tail.prev = None
@@ -93,12 +93,13 @@ class LL():
         self.currSize -=1 
 
     def specificdelete(self,y):
+        a = self.search(y)
         if self.isEmpty():
             print("Can't remove from empty linked list")
             return 0
         
-        a = self.search(y)
-        if a:
+        
+        elif a:
             self.currSize -=1
             if a.prev is not None:
                 a.prev.next = a.next
@@ -141,6 +142,8 @@ def main():
     x.specificdelete("d")
     x.specificdelete("f")
     x.taildelete()
+    b = x.numElements()
+    print(b)
     x.raverse()
     x.traverse()
 
