@@ -35,6 +35,14 @@ class Queue():
     def isEmpty(self):
         return self.size == 0
 
+    def traverse(self):
+        a = self.head
+        print("___starting traverse.___")
+        while a:
+            print(a.value)
+            a = a.next
+        print("___Done.___\n")
+
 
 def main():
     a = Node("h")
@@ -44,12 +52,9 @@ def main():
     q.nq(a)
     q.nq(b)
     q.nq(c)
-    print(q.head.value)
-    print(q.head.next.value)
-    print(q.tail.value)
+    q.traverse()
     q.dq()
-    print("_____")
-    print(q.head.value)
+    q.traverse()
     
 
 

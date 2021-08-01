@@ -37,6 +37,13 @@ class Stack():
     def isEmpty(self):
         return self.size == 0
 
+    def traverse(self):
+        a = self.head
+        print("___starting traverse.___")
+        while a:
+            print(a.value)
+            a = a.next
+        print("___Done.___\n")
 
 
 def main():
@@ -47,10 +54,10 @@ def main():
     stak.push(a)
     stak.push(b)
     stak.push(c)
+    stak.traverse()
     x = stak.pop()
-    print(stak.head.value)
-    print("_______")
-    print(x.value)
+    stak.traverse()
+
     
 if __name__ == "__main__":
     main()
