@@ -23,12 +23,13 @@ def iterFib(n,array):
     
 
 def main():
-    n = 72313213213123213
+    n = 723
     array = [-1] * n
     array2 = [-1]*n
     print(memoFib(n,array))
+    print("\n")
     print(iterFib(n,array2))
-    print(array2)
+    #print(array2)
      
 
 
