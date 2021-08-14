@@ -1,17 +1,22 @@
-#mergesort
+#mergesort (✓)
 import math
 
 def mergesort(array, l, r):
 
     if (l < r):
         mid = ((l+r)//2)
+        #print(array)
+        
         mergesort(array, l, mid)
+        #print(l)
+        #print(mid)
+        #print(r)
         mergesort(array, mid + 1, r)
         merge(array, l, mid, r)
 
 
 def merge(array, l, mid, r):
-
+        
     n1 = mid - l + 1
     n2 = r - mid
     L = [0] * (n1 + 1)
@@ -33,11 +38,11 @@ def merge(array, l, mid, r):
         else:
             array[k] = R[j]
             j = j + 1
-
-def main():
-    array = [9,8,7,6,5,4,3,2,1,0]
-    mergesort(array, 0, 9)
     print(array)
+def main():
+    array = [8,1,6,4,3]
+    mergesort(array, 0, 4)
+    #print(array)
 
 if __name__ == "__main__":
     main()
