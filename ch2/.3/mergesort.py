@@ -5,12 +5,7 @@ def mergesort(array, l, r):
 
     if (l < r):
         mid = ((l+r)//2)
-        #print(array)
-        
         mergesort(array, l, mid)
-        #print(l)
-        #print(mid)
-        #print(r)
         mergesort(array, mid + 1, r)
         merge(array, l, mid, r)
 
@@ -38,11 +33,11 @@ def merge(array, l, mid, r):
         else:
             array[k] = R[j]
             j = j + 1
-    print(array)
+    
 def main():
-    array = [8,1,6,4,3]
-    mergesort(array, 0, 4)
-    #print(array)
+    array = [8,2,1]
+    mergesort(array, 0, 2)
+    print(array)
 
 if __name__ == "__main__":
     main()
