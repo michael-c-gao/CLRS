@@ -6,7 +6,6 @@ def factorial(n):
 
 def main():
     n = 120
-    array = [-1] * n
     print(factorial(n))
     
 
