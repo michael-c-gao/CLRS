@@ -30,8 +30,8 @@ class BST():
     def preorderwalk(self,x):
         if x is not None:
             print(x.value)
-            self.postorderwalk(x.left)
-            self.postorderwalk(x.right)
+            self.preorderwalk(x.left)
+            self.preorderwalk(x.right)
 
     def treesearch(self, x, k):
         while((x is not None) and (k != x.value)):
@@ -106,12 +106,12 @@ class BST():
     
     
 def main():
-    a = Node(2)
+    a = Node(6)
     c = Node(5)
     d = Node(7)
-    e = Node(6)
-    f = Node(8)
-    g = Node(5)
+    e = Node(2)
+    f = Node(5)
+    g = Node(8)
 
     b = BST()
     b.insert(a)

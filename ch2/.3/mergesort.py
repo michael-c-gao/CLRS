@@ -33,11 +33,13 @@ def merge(array, l, mid, r):
         else:
             array[k] = R[j]
             j = j + 1
+    print(array)
     
 def main():
-    array = [8,2,1]
-    mergesort(array, 0, 2)
-    print(array)
+    array = [5,2,4,7,1,3,6,2]
+    lastIndex = len(array) -1
+    mergesort(array, 0, lastIndex)
+    #print(array)
 
 if __name__ == "__main__":
     main()

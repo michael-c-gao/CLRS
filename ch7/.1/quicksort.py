@@ -20,14 +20,14 @@ def partition(array,l,r):
     temp2 = array[i]
     array[i] = array[r]
     array[r] = temp2
+    print(array)
     return i
 
 def main():
-    array = [2,3,312,321,3123213,213,123,13,1,
-             321,3123,12,3,2,4,5,4,1,435,5,6,5]
+    array = [8,3,1,6,4]
     arrayLen = len(array)-1
     quicksort(array,0,arrayLen)
-    print(array)
+    #print(array)
 
 if __name__ == "__main__":
     main()
