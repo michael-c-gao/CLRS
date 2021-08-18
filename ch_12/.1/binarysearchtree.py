@@ -1,5 +1,5 @@
-#binary search tree
-
+#binary search tree (✓)
+#property: left value <= parent value <= right value
 
 class Node():
 
@@ -9,25 +9,27 @@ class Node():
         self.right = None
         self.parent = None
 
-
 class BST():
 
     def __init__(self):
         self.root = None
 
     def inorderwalk(self,x):
+        #left -> parent -> right
         if x is not None:
             self.inorderwalk(x.left)
             print(x.value)
             self.inorderwalk(x.right)
 
     def postorderwalk(self,x):
+        #left -> right -> parent
         if x is not None:
             self.postorderwalk(x.left)
             self.postorderwalk(x.right)
             print(x.value)
 
     def preorderwalk(self,x):
+        #parent -> left -> ... -> right
         if x is not None:
             print(x.value)
             self.preorderwalk(x.left)
@@ -103,15 +105,14 @@ class BST():
             y.left = z.left
             y.left.parent = y
         
-    
-    
 def main():
-    a = Node(6)
-    c = Node(5)
-    d = Node(7)
-    e = Node(2)
-    f = Node(5)
-    g = Node(8)
+    a = Node(4)
+    c = Node(2)
+    d = Node(6)
+    e = Node(1)
+    f = Node(3)
+    g = Node(5)
+    h = Node(7)
 
     b = BST()
     b.insert(a)
@@ -120,11 +121,15 @@ def main():
     b.insert(e)
     b.insert(f)
     b.insert(g)
-    b.inorderwalk(a)
+    b.insert(h)
+    b.preorderwalk(b.root)
     print("___")
+    succ = b.treesuccessor(b.root.right)
+    print(succ.value)
+    print("___")    
     b.delete(a)
-    b.delete(d)
-    b.inorderwalk(c)
+    b.delete(g)
+    b.inorderwalk(b.root)
 
 
 if __name__ == "__main__":
